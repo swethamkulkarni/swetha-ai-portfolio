@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swetha's AI Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <header>
+    <h1>Welcome to My AI Portfolio</h1>
+    <p>Explore my projects in AI and Machine Learning</p>
+  </header>
+
+  <!-- Chatbot Integration (optional) -->
+  <div id="botui-app"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
+  <script>
+    var botui = new BotUI('botui-app');
+    botui.message.add({
+      content: 'Hello! Welcome to my AI portfolio. How can I help you today?'
+    }).then(function() {
+      return botui.action.button({
+        action: [
+          { text: 'Show my projects', value: 'projects' },
+          { text: 'Tell me more about you', value: 'about' }
+        ]
+      });
+    }).then(function(res) {
+      if (res.value === 'projects') {
+        window.location.href = "projects.html"; // Direct to projects page
+      } else {
+        window.location.href = "about.html"; // Direct to about page
+      }
+    });
+  </script>
+</body>
+</html>
