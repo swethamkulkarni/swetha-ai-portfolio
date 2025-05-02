@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Projects</title>
-  <link rel="stylesheet" href="project-styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Swetha's AI Portfolio</title>
+  <link rel="stylesheet" href="project-styles.css" />
 </head>
-
 <body>
-  <main class="projects-container" id="projects-container"></main>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -20,17 +18,26 @@
 
   <header>
     <h1>My Projects</h1>
+    <p>Click on a project to view more details</p>
   </header>
 
-  <section class="project">
-    <h2>AI-Driven Sustainable Route Navigation Project</h2>
-    <p><strong>Period:</strong> Jun 2024 - Sep 2024</p>
-    <p><strong>Description:</strong> This project develops an AI-driven sustainable route navigation app...</p>
-    <p><strong>Technologies Used:</strong> AI, Machine Learning, Python, Traffic Data, Route Optimization</p>
-    <a href="https://github.com/swethamkulkarni/Sustainable-Navigation-Model" target="_blank">View on GitHub</a>
-  </section>
+  <main id="projects-container" class="projects-container"></main>
+
+  <div id="project-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-thumbnail" src="" alt="" />
+      <p id="modal-description"></p>
+      <ul id="modal-details"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Swetha's Portfolio</p>
+  </footer>
+
   <script src="project-data.js"></script>
   <script src="project-scripts.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
