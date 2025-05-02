@@ -11,6 +11,11 @@
     color: #333;
     line-height: 1.6;
     transition: opacity 0.5s ease-in-out;
+    opacity: 0;  
+  }
+  
+  body.fade-in {
+    opacity: 1; /* fades in */
   }
   
   body.fade-out {
