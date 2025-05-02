@@ -1,165 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | AI/ML Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="project-styles.css">
-    <!-- Page transition animation -->
-    <link rel="stylesheet" href="animations.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="fade-in">
-    <header>
-        <h1>My AI/ML Projects</h1>
-        <p>Exploring the frontiers of artificial intelligence and machine learning</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="project.html" class="nav-link active">Projects</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <div class="section-title">
-            <h2>Featured Projects</h2>
-        </div>
+  <header>
+    <h1>My Projects</h1>
+  </header>
 
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card" data-project="project1">
-                <div class="project-thumbnail" style="background-image: url('images/project1.jpg')"></div>
-                <div class="project-info">
-                    <h3>Image Classification with CNN</h3>
-                    <p>A deep learning model using convolutional neural networks to classify images with high accuracy.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">TensorFlow</span>
-                        <span class="project-tag">CNN</span>
-                        <span class="project-tag">Computer Vision</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card" data-project="project2">
-                <div class="project-thumbnail" style="background-image: url('images/project2.jpg')"></div>
-                <div class="project-info">
-                    <h3>Natural Language Processing Chatbot</h3>
-                    <p>A conversational AI system that understands and responds to natural language queries.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">PyTorch</span>
-                        <span class="project-tag">Transformers</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card" data-project="project3">
-                <div class="project-thumbnail" style="background-image: url('images/project3.jpg')"></div>
-                <div class="project-info">
-                    <h3>Predictive Analytics Dashboard</h3>
-                    <p>An interactive dashboard for visualizing and analyzing predictive models' performance.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Scikit-learn</span>
-                        <span class="project-tag">Streamlit</span>
-                        <span class="project-tag">Data Visualization</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card" data-project="project4">
-                <div class="project-thumbnail" style="background-image: url('images/project4.jpg')"></div>
-                <div class="project-info">
-                    <h3>Reinforcement Learning for Game AI</h3>
-                    <p>Using reinforcement learning algorithms to train AI agents to play complex games.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Reinforcement Learning</span>
-                        <span class="project-tag">PyTorch</span>
-                        <span class="project-tag">OpenAI Gym</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card" data-project="project5">
-                <div class="project-thumbnail" style="background-image: url('images/project5.jpg')"></div>
-                <div class="project-info">
-                    <h3>Time Series Forecasting</h3>
-                    <p>Predicting future values in time series data using advanced statistical and deep learning methods.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">LSTM</span>
-                        <span class="project-tag">Prophet</span>
-                        <span class="project-tag">Time Series</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card" data-project="project6">
-                <div class="project-thumbnail" style="background-image: url('images/project6.jpg')"></div>
-                <div class="project-info">
-                    <h3>Recommendation System</h3>
-                    <p>A collaborative filtering algorithm that provides personalized recommendations based on user behavior.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Collaborative Filtering</span>
-                        <span class="project-tag">Matrix Factorization</span>
-                        <span class="project-tag">Recommender Systems</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Template for Project Details -->
-    <div class="modal-overlay" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <div id="modalContent">
-                <!-- Dynamic content will be inserted here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Chatbot Widget -->
-    <div class="chatbot-widget" id="chatbotWidget">
-        <div class="chatbot-toggle" id="chatbotToggle">
-            <i class="fas fa-robot"></i>
-        </div>
-        <div class="chatbot-container" id="chatbotContainer">
-            <div class="chatbot-header">
-                <h3>AI Assistant</h3>
-                <button class="chatbot-close" id="chatbotClose">&times;</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <!-- Messages will appear here -->
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Ask me anything...">
-                <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 AI/ML Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-        </div>
-    </footer>
-
-    <script src="projects-data.js"></script>
-    <script src="project-script.js"></script>
-    <script src="animations.js"></script>
-    <script src="chatbot.js"></script>
+  <section class="project">
+    <h2>AI-Driven Sustainable Route Navigation Project</h2>
+    <p><strong>Period:</strong> Jun 2024 - Sep 2024</p>
+    <p><strong>Description:</strong> This project develops an AI-driven sustainable route navigation app...</p>
+    <p><strong>Technologies Used:</strong> AI, Machine Learning, Python, Traffic Data, Route Optimization</p>
+    <a href="https://github.com/swethamkulkarni/Sustainable-Navigation-Model" target="_blank">View on GitHub</a>
+  </section>
+  
+  <script src="script.js"></script>
 </body>
 </html>
