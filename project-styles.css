@@ -6,13 +6,13 @@ body {
     color: #333;
   }
   
-
   nav ul {
     list-style: none;
     background: #333;
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    margin: 0;
   }
   
   nav ul li {
@@ -25,6 +25,11 @@ body {
     font-size: 18px;
   }
   
+  nav ul li a:hover {
+    color: #4CAF50;
+    transition: color 0.3s ease;
+  }
+  
   header {
     text-align: center;
     padding: 30px 20px;
@@ -32,9 +37,19 @@ body {
     color: white;
   }
   
+  header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
   .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 30px;
     max-width: 1200px;
@@ -47,30 +62,82 @@ body {
     overflow: hidden;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
   
   .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-image {
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
   }
   
   .project-card img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
     border-radius: 8px 8px 0 0;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .project-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
   
   .project-card h3 {
     font-size: 20px;
-    margin: 15px;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    color: #333;
   }
   
-  .project-card p {
+  .project-card h3:hover {
+    color: #4CAF50;
+  }
+  
+  .toggle-details {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 14px;
-    margin: 0 15px 15px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .toggle-details:hover {
+    background-color: #388E3C;
+  }
+  
+  .project-details {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .project-details p {
+    margin: 8px 0;
+  }
+  
+  .hidden {
+    display: none;
   }
   
   footer {
@@ -80,57 +147,19 @@ body {
     color: white;
   }
   
-  /* Modal Styles */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 90%;
-    position: relative;
-    max-height: 90%;
-    overflow-y: auto;
-  }
-  
-  .modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .modal-content h2 {
-    margin-top: 0;
-  }
-  
-  .modal-content ul {
-    list-style: disc;
-    margin-left: 20px;
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .hidden {
-    display: none;
-  }
-
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .projects-container {
+      grid-template-columns: 1fr;
+      padding: 15px;
+    }
     
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    nav ul li {
+      margin: 5px 0;
+    }
+  }
