@@ -166,3 +166,83 @@ const projectsData = {
             technicalDetails: "The system uses a hybrid architecture combining matrix factorization (implemented with Alternating Least Squares) for collaborative filtering and a neural network for content-based recommendations. The backend is built with Python and Spark for distributed processing, with Redis for caching frequently accessed recommendations."
         }
     };
+
+    const modal = document.getElementById('projectModal');
+    const modalContent = document.getElementById('modalContent');
+    const modalClose = document.querySelector('.modal-close');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const projectId = card.getAttribute('data-project');
+            const project = projectsData[projectId];
+            
+            // Populate modal content
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h3>${project.title}</h3>
+                </div>
+                <img src="${project.image}" alt="${project.title}" class="modal-image">
+                
+                <div class="modal-section">
+                    <h4>Description</h4>
+                    <p>${project.description}</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Goals Achieved</h4>
+                    <ul>
+                        ${project.goals.map(goal => `<li>${goal}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Problems Faced</h4>
+                    <ul>
+                        ${project.problems.map(problem => `<li>${problem}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Solutions Found</h4>
+                    <ul>
+                        ${project.solutions.map(solution => `<li>${solution}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Outcomes</h4>
+                    <ul>
+                        ${project.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Technical Details</h4>
+                    <p>${project.technicalDetails}</p>
+                </div>
+            `;
+            
+            // Show modal
+            modal.classList.add('active');
+        });
+    });
+
+    // Close modal when clicking the close button
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside the modal content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });

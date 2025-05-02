@@ -1,5 +1,3 @@
-/* Page transitions and animations */
-
 /* Initial page load animation */
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
