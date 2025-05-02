@@ -1,9 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f8f9fa;
     color: #333;
+    line-height: 1.6;
   }
   
   nav ul {
@@ -13,6 +14,7 @@ body {
     justify-content: center;
     padding: 10px 0;
     margin: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   nav ul li {
@@ -23,90 +25,125 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
   }
   
   nav ul li a:hover {
     color: #4CAF50;
-    transition: color 0.3s ease;
   }
   
   header {
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     background-color: #4CAF50;
     color: white;
+    background-image: linear-gradient(135deg, #4CAF50, #2E7D32);
   }
   
   header h1 {
-    margin: 0 0 10px 0;
-    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    font-size: 2.8rem;
+    font-weight: 700;
   }
   
   header p {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
+  /* Projects Section */
   .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 30px;
     max-width: 1200px;
-    margin: auto;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  /* Project Card - New Masonry Layout */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
   }
   
   .project-card {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: fit-content;
   }
   
   .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
   }
   
   .project-image {
+    position: relative;
     height: 200px;
     overflow: hidden;
     cursor: pointer;
   }
   
-  .project-card img {
+  .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    display: block;
-    border-radius: 8px 8px 0 0;
     transition: transform 0.5s ease;
   }
   
-  .project-card:hover img {
+  .project-image:hover img {
     transform: scale(1.05);
   }
   
-  .project-info {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  .project-content {
+    padding: 20px;
   }
   
-  .project-card h3 {
-    font-size: 20px;
-    margin: 0 0 15px 0;
-    cursor: pointer;
+  .project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
     color: #333;
+    cursor: pointer;
   }
   
-  .project-card h3:hover {
+  .project-title:hover {
     color: #4CAF50;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .project-tag {
+    background-color: #e9f5e9;
+    color: #2E7D32;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .project-summary {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .project-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .toggle-details {
@@ -116,10 +153,10 @@ body {
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: background-color 0.3s ease;
-    align-self: flex-start;
-    margin-bottom: 15px;
+    flex-grow: 0;
   }
   
   .toggle-details:hover {
@@ -127,39 +164,87 @@ body {
   }
   
   .project-details {
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
   }
   
   .project-details p {
-    margin: 8px 0;
+    margin: 10px 0;
+  }
+  
+  .project-details strong {
+    color: #333;
+    font-weight: 600;
   }
   
   .hidden {
     display: none;
   }
   
+  /* Project metrics visualization */
+  .metrics-container {
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .metric-bar {
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .metric-fill {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .metric-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
   footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     background-color: #333;
     color: white;
+    margin-top: 50px;
   }
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .projects-container {
+    .project-grid {
       grid-template-columns: 1fr;
-      padding: 15px;
     }
     
     nav ul {
       flex-direction: column;
       align-items: center;
+      padding: 5px 0;
     }
     
     nav ul li {
       margin: 5px 0;
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+    }
+    
+    header p {
+      font-size: 1.1rem;
     }
   }
