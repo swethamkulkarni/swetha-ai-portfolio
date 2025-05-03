@@ -76,7 +76,7 @@ body {
     transition: all 0.3s ease;
     height: fit-content; /* Make all cards the same height */
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
   }
   
   .project-card:hover {
