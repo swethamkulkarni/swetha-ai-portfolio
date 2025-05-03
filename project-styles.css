@@ -30,15 +30,14 @@ body {
   }
   
   nav ul li a:hover {
-    color: #4CAF50;
+    color: #4361ee; /* Changed from green to blue */
   }
   
   header {
     text-align: center;
     padding: 40px 20px;
-    background-color: #4CAF50;
     color: white;
-    background-image: linear-gradient(135deg, #4CAF50, #2E7D32);
+    background-image: linear-gradient(135deg, #3a0ca3, #4361ee); /* Changed from green to blue gradient */
   }
   
   header h1 {
@@ -61,7 +60,7 @@ body {
     padding: 0 20px;
   }
   
-  /* Project Card - New Masonry Layout */
+  /* Project Card - New Grid Layout */
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -75,7 +74,9 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
-    height: fit-content;
+    height: 100%; /* Make all cards the same height */
+    display: flex;
+    flex-direction: column;
   }
   
   .project-card:hover {
@@ -103,6 +104,9 @@ body {
   
   .project-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to expand */
   }
   
   .project-title {
@@ -114,7 +118,7 @@ body {
   }
   
   .project-title:hover {
-    color: #4CAF50;
+    color: #4361ee; /* Changed from green to blue */
   }
   
   .project-tags {
@@ -125,8 +129,8 @@ body {
   }
   
   .project-tag {
-    background-color: #e9f5e9;
-    color: #2E7D32;
+    background-color: #e6e8fa; /* Changed from green to light blue */
+    color: #3a0ca3; /* Changed from green to dark blue */
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -144,10 +148,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto; /* Push to bottom of card */
+    gap: 10px;
   }
   
   .toggle-details {
-    background-color: #4CAF50;
+    background-color: #4361ee; /* Changed from green to blue */
     color: white;
     border: none;
     padding: 8px 16px;
@@ -156,11 +162,12 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.3s ease;
-    flex-grow: 0;
+    flex-grow: 1;
+    text-align: center;
   }
   
   .toggle-details:hover {
-    background-color: #388E3C;
+    background-color: #3a0ca3; /* Changed to darker blue */
   }
   
   .project-details {
@@ -201,7 +208,7 @@ body {
   
   .metric-fill {
     height: 100%;
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #4361ee, #3a0ca3); /* Changed from green to blue gradient */
     border-radius: 3px;
     position: absolute;
     top: 0;
