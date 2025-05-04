@@ -5,27 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swetha's AI Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
+    <div class="logo">S</div>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About Me</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
   </nav>
 
-  <header>
-    <h1>Hi, I'm Swetha</h1>
-    <p>AI Enthusiast | ML Developer | Tech Lover</p>
-  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="greeting">Hello there, I'm</p>
+        <h1 class="name">Swetha</h1>
+        <div class="title-container">
+          <p class="title">AI Enthusiast | <span class="highlight">ML Developer</span> | Tech Lover</p>
+        </div>
+        <p class="hero-description">Turning data into intelligent solutions. Creating AI that matters.</p>
+        <div class="cta-buttons">
+          <a href="projects.html" class="btn primary-btn">View My Work</a>
+          <a href="contact.html" class="btn secondary-btn">Let's Connect</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="blob-animation"></div>
+      </div>
+    </div>
+  </section>
 
- 
+  <section class="about-preview">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="about-content">
+      <p>I'm a passionate machine learning developer focused on creating innovative AI solutions. With expertise in various ML frameworks and technologies, I love tackling complex problems and turning data into actionable insights.</p>
+      <a href="about.html" class="read-more">Read more about my journey <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="section-title">
+      <h2>My Skills</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+        <h3>Machine Learning</h3>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>Python</h3>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 95%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Data Science</h3>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+        <h3>Deep Learning</h3>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-projects">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image"></div>
+        <h3>Sentiment Analysis Tool</h3>
+        <p>NLP-based sentiment analyzer for customer feedback processing</p>
+        <a href="projects.html#project1" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="project-card">
+        <div class="project-image"></div>
+        <h3>Computer Vision App</h3>
+        <p>Object detection system for real-time image processing</p>
+        <a href="projects.html#project2" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="see-all-projects">
+      <a href="projects.html" class="btn primary-btn">See All Projects</a>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Swetha's Portfolio</p>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Swetha's Portfolio</h3>
+        <p>Transforming ideas into intelligent solutions</p>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Swetha's Portfolio. All rights reserved.</p>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
