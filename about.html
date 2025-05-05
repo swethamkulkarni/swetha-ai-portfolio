@@ -3,28 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
+  <title>About Me | Swetha</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="fade-in">
   <nav>
+    <a href="index.html" class="logo">S</a>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
   </nav>
 
-  <header>
-    <h1>About Me</h1>
-    <p>Hi, I'm Swetha! I'm a Master's graduate in AI and a passionate developer.</p>
-    <p>I'm currently looking for machine learning-related roles and love working on AI-powered solutions.</p>
-  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="section-title">
+          <span class="name">About Me</span>
+        </h1>
+        <div class="underline"></div>
+        
+        <div class="about-content" style="text-align: left; margin-top: 30px;">
+          <p>Hi there! I'm <span class="highlight">Swetha</span>, an AI enthusiast and developer with a Master's degree in Artificial Intelligence. My journey in technology has been driven by a passion for creating intelligent solutions that make a meaningful impact.</p>
+          
+          <p>With a strong foundation in machine learning algorithms, data analysis, and software development, I love tackling complex problems and transforming raw data into valuable insights. My academic background has equipped me with both theoretical knowledge and practical skills in AI implementation.</p>
+          
+          <h3 style="margin: 25px 0 15px; font-size: 1.5rem; color: var(--text-color);">Education</h3>
+          <p><span class="highlight">Master's in Artificial Intelligence</span> - Focused on machine learning, deep learning, computer vision, and natural language processing.</p>
+          
+          <h3 style="margin: 25px 0 15px; font-size: 1.5rem; color: var(--text-color);">Experience</h3>
+          <p>I've worked on various projects involving predictive analytics, recommendation systems, and automation tools. My experience spans multiple domains, allowing me to adapt AI solutions to diverse challenges.</p>
+          
+          <h3 style="margin: 25px 0 15px; font-size: 1.5rem; color: var(--text-color);">What I Do</h3>
+          <p>I specialize in developing AI-powered applications that solve real-world problems. Currently, I'm focused on machine learning model development, data pipeline optimization, and creating intuitive interfaces for complex AI systems.</p>
+          
+          <h3 style="margin: 25px 0 15px; font-size: 1.5rem; color: var(--text-color);">My Philosophy</h3>
+          <p>I believe in creating AI that matters – technology that's not just technically impressive but also ethically responsible and genuinely useful. My goal is to bridge the gap between cutting-edge AI research and practical applications that improve people's lives.</p>
+          
+          <div class="cta-buttons" style="margin-top: 40px;">
+            <a href="projects.html" class="btn primary-btn">View My Projects</a>
+            <a href="contact.html" class="btn secondary-btn">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="section-title">
+      <h2>My Skills</h2>
+      <div class="underline"></div>
+    </div>
+    
+    <div class="skills-container">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>Machine Learning</h3>
+        <p>Expertise in supervised and unsupervised learning algorithms, model evaluation, and deployment.</p>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--width: 90%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Programming</h3>
+        <p>Proficient in Python, TensorFlow, PyTorch, and data manipulation libraries.</p>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--width: 85%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Data Analysis</h3>
+        <p>Strong skills in data preprocessing, visualization, and extracting meaningful insights.</p>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--width: 80%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <h3>Deep Learning</h3>
+        <p>Experience with neural networks, CNNs, RNNs, and transfer learning techniques.</p>
+        <div class="skill-bar">
+          <div class="skill-progress" style="--width: 75%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>Follow me on <a href="https://linkedin.com//in//swethamkulkarni">LinkedIn</a> | <a href="https://github.com//swethamkulkarni">GitHub</a></p>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Swetha</h3>
+        <p>AI Enthusiast & ML Developer</p>
+      </div>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/swethamkulkarni" class="social-icon" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/swethamkulkarni" class="social-icon" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:contact@youremail.com" class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Swetha. All rights reserved.
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    // Simple dark mode toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const icon = themeToggle.querySelector('i');
+      if (icon.classList.contains('fa-moon')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+    
+    // Animation for skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-progress');
+    window.addEventListener('scroll', () => {
+      skillBars.forEach(bar => {
+        const position = bar.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (position < screenPosition) {
+          bar.style.animation = 'progressAnimation 1.5s ease-out forwards';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
