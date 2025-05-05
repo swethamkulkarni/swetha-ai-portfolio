@@ -3,114 +3,471 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me | Swetha's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact | Swetha's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #3498db;
+      --text-color: #333;
+      --light-text: #666;
+      --bg-color: #f8f9fa;
+      --dot-color: rgba(76, 175, 80, 0.15);
+      --card-bg: #ffffff;
+      --border-radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+      background-size: 20px 20px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding-bottom: 5px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--text-color);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--text-color);
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: 100px 0 40px;
+      text-align: center;
+    }
+
+    .gradient-heading {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /*text-fill-color: transparent;*/
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      margin: 0 auto 40px;
+      border-radius: 2px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 40px 0 100px;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* Contact Info Side */
+    .contact-info {
+      padding: 50px 40px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .contact-info p {
+      margin-bottom: 30px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .contact-methods {
+      margin-top: 40px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .contact-method i {
+      font-size: 20px;
+      margin-right: 15px;
+      margin-top: 5px;
+    }
+
+    .contact-method h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .contact-method p {
+      margin-bottom: 0;
+      opacity: 0.8;
+    }
+
+    .contact-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .contact-social .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-social .social-icon:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    /* Contact Form Side */
+    .contact-form-container {
+      padding: 50px 40px;
+    }
+
+    .contact-form {
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+      outline: none;
+    }
+
+    .primary-btn {
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #fff;
+      padding: 30px 0 20px;
+      text-align: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: var(--light-text);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        text-align: center;
+        padding: 40px 30px;
+      }
+      
+      .contact-method {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .contact-method i {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+      
+      .contact-social {
+        justify-content: center;
+      }
+      
+      .contact-form-container {
+        padding: 40px 30px;
+      }
+      
+      .gradient-heading {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 20px;
+      }
+      
+      .gradient-heading {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header {
+        padding: 80px 0 30px;
+      }
+      
+      .gradient-heading {
+        font-size: 2rem;
+      }
+      
+      .contact-section {
+        padding: 20px 0 60px;
+      }
+      
+      .contact-info,
+      .contact-form-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav>
-    <a href="index.html" class="logo">S</a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <div class="theme-toggle">
-      <i class="fas fa-moon"></i>
-    </div>
-  </nav>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <img src="/api/placeholder/48/48" alt="S Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <button class="theme-toggle">🌙</button>
+    </nav>
+  </header>
   
   <!-- Contact Header -->
   <section class="page-header">
-    <div class="section-title">
-      <h2>Contact Me</h2>
-      <div class="underline"></div>
-    </div>
+    <h1 class="gradient-heading">Contact</h1>
+    <div class="divider"></div>
   </section>
   
   <!-- Contact Form Section -->
   <section class="contact-section">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Let's Connect</h3>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-        
-        <div class="contact-methods">
-          <div class="contact-method">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <p>hello@swethakulkarni.com</p>
-            </div>
-          </div>
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
           
-          <div class="contact-method">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <h4>Location</h4>
-              <p>San Francisco, CA</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>swethamkulkarni0302@gmail.com</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="contact-social">
-            <a href="https://linkedin.com/in/swethamkulkarni" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/swethamkulkarni" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/swethamkulkarni" class="social-icon"><i class="fab fa-twitter"></i></a>
+            
+            <div class="contact-method">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Birmingham, UK</p>
+              </div>
+            </div>
+            
+            <div class="contact-social">
+              <a href="https://linkedin.com/in/swethamkulkarni" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/swethamkulkarni" class="social-icon"><i class="fab fa-github"></i></a>
+              <a href="https://twitter.com/swethamkulkarni" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="contact-form-container">
-        <form class="contact-form">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, idea, or question" required></textarea>
-          </div>
-          
-          <button type="submit" class="primary-btn">Send Message</button>
-        </form>
+        
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, idea, or question" required></textarea>
+            </div>
+            
+            <button type="submit" class="primary-btn">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
   
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-info">
-        <h3>Swetha M. Kulkarni</h3>
-        <p>AI Enthusiast & Developer</p>
+    <div class="container">
+      <div class="copyright">
+        &copy; 2025 Swetha M. Kulkarni. All rights reserved.
       </div>
-      
-      <div class="social-links">
-        <a href="https://linkedin.com/in/swethamkulkarni" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/swethamkulkarni" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/swethamkulkarni" class="social-icon"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-    
-    <div class="copyright">
-      &copy; 2025 Swetha M. Kulkarni. All rights reserved.
     </div>
   </footer>
   
-  <script src="script.js"></script>
+  <script>
+    // Simple theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '☀️';
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--card-bg', '#1e1e1e');
+        document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+        document.documentElement.style.setProperty('--light-text', '#aaaaaa');
+        document.documentElement.style.setProperty('--dot-color', 'rgba(76, 175, 80, 0.1)');
+      } else {
+        themeToggle.innerHTML = '🌙';
+        document.documentElement.style.setProperty('--bg-color', '#f8f9fa');
+        document.documentElement.style.setProperty('--card-bg', '#ffffff');
+        document.documentElement.style.setProperty('--text-color', '#333');
+        document.documentElement.style.setProperty('--light-text', '#666');
+        document.documentElement.style.setProperty('--dot-color', 'rgba(76, 175, 80, 0.15)');
+      }
+    });
+  </script>
 </body>
 </html>
