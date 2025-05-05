@@ -592,6 +592,7 @@ nav ul li a.active {
   flex-wrap: wrap;
   padding: 0 20px;
   margin-top: -20px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
 }
