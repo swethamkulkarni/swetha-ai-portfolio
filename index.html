@@ -171,7 +171,31 @@
       <p>© 2025 Swetha's Portfolio. All rights reserved.</p>
     </div>
   </footer>
-
+  <script>
+    // Simple theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '☀️';
+        document.documentElement.style.setProperty('--bg-color', '#121212');
+        document.documentElement.style.setProperty('--card-bg', '#1e1e1e');
+        document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+        document.documentElement.style.setProperty('--light-text', '#aaaaaa');
+        document.documentElement.style.setProperty('--dot-color', 'rgba(76, 175, 80, 0.1)');
+      } else {
+        themeToggle.innerHTML = '🌙';
+        document.documentElement.style.setProperty('--bg-color', '#f8f9fa');
+        document.documentElement.style.setProperty('--card-bg', '#ffffff');
+        document.documentElement.style.setProperty('--text-color', '#333');
+        document.documentElement.style.setProperty('--light-text', '#666');
+        document.documentElement.style.setProperty('--dot-color', 'rgba(76, 175, 80, 0.15)');
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
