@@ -1,13 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
-  --primary-color: #4cb050;  /* Green */
-  --secondary-color: #4395d8; /* Blue */
-  --bg-color: #f8f9fa;
+  --primary-color: #4CAF50;
+  --primary-dark: #388E3C;
+  --primary-light: #81C784;
+  --secondary-color: #2196F3;
   --text-color: #333;
+  --text-light: #767676;
+  --bg-color: #f8f8f8;
   --card-bg: #ffffff;
-  --border-radius: 8px;
-  --shadow: 0 5px 15px rgba(0,0,0,0.08);
+  --border-radius: 10px;
   --transition: all 0.3s ease;
-  --dot-pattern: radial-gradient(#4cb050 1px, transparent 1px);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --btn-gradient: linear-gradient(135deg, #4CAF50, #2196F3);
+  --dot-pattern: radial-gradient(var(--primary-light) 1px, transparent 1px);
 }
 
 .dark-theme {
